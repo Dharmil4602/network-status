@@ -1,0 +1,129 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    background: #f2f2f2;
+}
+
+.container
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    animation: show_toast 1s ease forwards;
+}
+
+@keyframes show_toast {
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    50%
+    {
+        transform: translateX(10%);
+    }
+    100%
+    {
+        transform: translateX(20px);
+    }
+
+}
+
+.container.hide
+{
+    animation: hide_toast 1s ease forwards;
+}
+
+@keyframes hide_toast {
+    0%
+    {
+        transform: translateX(20px);
+    }
+    50%
+    {
+        transform: translateX(10%);
+    }
+    100%
+    {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-100%);
+    }
+
+}
+.container .toast
+{
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    border-left: 5px solid #2ecc71;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container .toast.offline
+{
+    border-color: rgb(179, 176, 176);
+}
+
+.toast .content
+{
+    display: flex;
+    align-items: center;
+}
+
+.toast .content .icon
+{
+    font-size: 25px;
+    background: #2ecc71;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.toast.offline .content .icon
+{
+background: rgb(179, 176, 176);
+}
+
+.toast .content .details
+{
+    margin-left: 15px;
+}
+
+.toast .content .details span
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.toast .content .details p
+{
+    color: rgb(180, 178, 178);
+    margin-top: 5px;
+}
+
+.toast .close-icon
+{
+    font-size: 25px;
+    background: rgb(201, 198, 198);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+}
